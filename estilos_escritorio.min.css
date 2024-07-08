@@ -1,0 +1,1064 @@
+
+  /*Version de escritorio */
+
+  /*ETIQUETAS ESTÁN ORDENADAS SIGUIENDO EL SIGUIENTE CRITERIO (DESCENDENTEMENTE SI LOS DE ARRIBA EMPATAN):
+  1) EN ORDEN DE APARICIÓN EN EL HTML
+  2) JERARQUICAMENTE DE ACUERDO A ENVOLTURAS DE ETIQUETAS HTML.
+  3) ALFABÉTICAMENTE EN CASO DE ESTAR AL MISMO NIVEL*/
+
+@media(min-width: 768px){
+
+  nav {
+    width: 80vw;
+    height: 3.5em;
+    position: relative;
+    top: 1.3em;
+    left: 10vw;
+    border-radius: 5%;
+    background-color: #ebecf1;
+    position: fixed;
+    z-index:5;
+    border-radius: 1em;
+    box-shadow: 0em 0.1em 0.4em 0.01em gray;
+  }
+
+  nav > div {
+    position: absolute;
+    top: -38%;
+    left: 1%;
+    z-index: 6;
+  }
+
+  nav > div > img {
+    height: 100%;
+    width: 100%;
+    z-index: 7;
+  }
+  /* Fijate que cuando ponés algo absolute se pone arriba de otras cosas que no son absolute y tienen menor z-index (supera lo relative)*/
+  nav > ul {
+    display:relative;
+    z-index:10;
+    list-style: none;
+    color: #858c50;
+    width:100%;
+    font-family: 'jubilat-bold';
+    font-size: 1em;
+    justify-content: space-between;
+  }
+
+  nav > ul > li{
+    margin: 0;
+    margin-left: 1.5em;
+    display: inline-block;
+    top: 33%;
+  }
+
+  nav > ul > li:hover{
+    margin: 0;
+    margin-left: 1.5em; 
+    display: inline-block;
+    top: 25%;  /*Algo interesantes que se puede hacer es que suban un poquito los íconos con el hover*/
+    /* color: #171414; */
+    cursor: pointer;
+  }
+/*
+  nav > ul > li > a:hover{
+    margin: 0;
+    display: inline-block;
+    top: 25%;
+    color: #171414;
+    cursor: pointer;
+  } */
+  /*Estas etquetas li.[nombre de clase] están ordenadas por el orden visual*/
+  nav > ul > li.archivos {
+    position: absolute;
+    left: 8.3%;
+  }
+  nav > ul > li.itinerarios {
+    position: absolute;
+    left: 16.6%;
+  }
+  nav > ul > li.escritores {
+    position: absolute;
+    left: 25.9%;
+  }
+
+  nav > ul > li.colonias{
+    position: absolute;
+    left: 33.2%;
+  }
+
+  nav > ul > li.sobreelportal{
+    position: absolute;
+    left: 39.8%;
+  }
+
+  nav > ul > li.instagram-escritorio{
+    position: absolute;
+    right: 4%;
+  }
+
+  nav > ul > li.lupita-escritorio{
+    position: absolute;
+    right: 1%;
+  }
+
+  nav > ul > li.iconos-escritorio li.instagram-escritorio .menu-active{
+    position: absolute;
+    right: 8%;
+  }
+
+  nav > ul > li.iconos-escritorio  li.lupita-escritorio .menu-active{
+    position: absolute;
+    right: 5%;
+  }
+
+  nav > ul > li > a {
+    text-decoration: none;
+    color: #858c50;
+  }
+
+  nav > ul > li > ul {
+    box-shadow: 0 0.4em 0.5em -0.4em gray;
+    background-color: #ebecf1;
+    display: none;
+    list-style: none;
+    font-family: 'jubilat-light';
+    font-weight: 900;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 4em;
+    padding-left: 1em; /*To do: ver de dónde hereda un padding*/
+    border-radius: 0.5em;
+  }
+  nav > ul > li > ul > li {
+    margin-top:0.5em;
+  }
+  nav > ul > li > ul > li > a {
+    text-decoration: none;
+    color: #981914
+  }
+  nav > ul > li > ul > li > a:hover {
+    text-decoration: none;
+    color: #171414
+  }
+
+  nav ul li.menu-active {
+    color: #981914;
+    top: 25%;
+  }
+
+  /*Desaparezco cuadro de búsqueda, iconos, textos y el botón hamburguesa del menú de celular*/
+  nav > ul > form.cuadro-busqueda,
+  nav > ul > div.iconos,
+  nav > ul > p,
+  nav > button.hamburguesa{
+    display: none;
+  }
+
+
+  .separador-bajo-nav{
+    position: relative;
+    top: 0;
+    opacity: 1;
+    width: 100%;
+    height: 4.7em;
+    background-color: white;
+    z-index:4;
+  }
+
+  /*Desaparezco carrusel del celular*/
+  .carousel, .carousel-inner ,.carousel-item, .carousel-inner img, .carousel-titulo, .carousel-leermas, .carousel-leermas > h2>a  {
+    display:none;
+  }
+
+
+  .carousel-escritorio {
+    position: relative;
+    width: 100%;
+    max-height: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .carousel-escritorio-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-escritorio-item {
+    /* min-width: 100%; */
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .carousel-escritorio-item img {
+    width: 100vw;
+    /* height:  */
+    display: block;
+  }
+
+button.prev-escritorio {
+    left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  button.next-escritorio {
+    right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .textos-imagen-carousel {
+    position: absolute;
+    top: 25%;
+    right: 40%;
+    width:70%;
+/*       
+    padding-bottom: 0.6em;
+    padding-top: 0.6em; */
+  }
+  .carousel-escritorio-titulo {
+    flex: 1;
+    position: absolute;
+    top: 0%;
+    right: -31.4em;
+    z-index: 100;
+    transform: translateX(-50%);
+    color: #f4f1e5; 
+    width: 60%;
+    font-family: 'jubilat-bold';
+    font-size: 1.6em;
+    z-index: 1; 
+    text-align: right; 
+  }
+
+  
+  .carousel-escritorio-leermas {
+    flex: 1;
+    width: 11em;
+    position: absolute;
+    top: 14em;
+    right: -30%;
+    font-family: 'Satisfy';
+    font-size: 1em;
+    font-weight: 100;
+    text-align: center;
+    /* padding-right: */
+
+    height: 3em;
+    border: 0.1em solid #f6efdd;
+    color: #f6efdd;
+    z-index: 1;
+    border-radius: 8%;
+    
+  }
+  body > div.carousel-escritorio > div > div.carousel-escritorio-item.active > div.carousel-escritorio-titulo > h1 { /*Selector texto carrusel 1*/
+ 
+    position: absolute;
+    
+  }
+  body > div.carousel-escritorio > div > div:nth-child(2) > div.carousel-escritorio-titulo > h1{ /*Selector texto carrusel 2*/
+    /* text-align: right; */
+    position: absolute;
+  }
+
+  .carousel-escritorio-leermas > h2>a {
+    text-decoration: none;
+    color:#f6efdd;
+  }
+
+
+/*Inicio*/
+.separador {
+    background-color: white; /*Base color*/
+  }
+  .separador.inicio{ /*To do: cambiar margen de esto*/
+    border-radius: 0.5em;
+    height: 2.5em;
+    box-shadow: 0em 0.25em 0.25em rgb(140, 140, 140);
+  }
+  .separador.inicio > h4{
+    color: #858c50;
+    font-family: 'jubilat-light';
+    position: relative;
+    font-size: 1.6em;
+    top: 10%;
+    left: 6%;
+    width: 94%;
+  }
+
+  .escritorio {
+    position: relative;
+}
+
+.escritorio .detalle {
+    position: absolute;
+}
+
+.escritorio .detalle1 {
+    top: 4em;
+    left: 7em;
+}
+
+.escritorio .detalle2 {
+    top: 12em;
+    left: 5em;
+    z-index:11;
+}
+
+.escritorio .detalle3 {
+    top: 13em;
+    left: 5em;
+}
+
+.escritorio .detalle4 {
+    bottom: -10.39em;
+    right: 14em;
+    z-index:-1;
+}
+
+.escritorio .detalle5 {
+    bottom: -10.34em;
+    right: 0em;
+
+}
+
+  .escritorio .pampa {
+    display: flex;
+    flex-direction: column;
+    gap: 2em; /* Espacio entre las filas */
+    padding-left: 14em;
+    padding-right: 14em;
+}
+
+.escritorio .pampa .fila {
+    display: flex;
+    justify-content: space-between; /* Distribuye las columnas con espacio entre ellas */
+}
+
+.escritorio .pampa .columna {
+    flex: 1; /* Cada columna ocupa el mismo espacio */
+    padding-left: auto;
+    padding-right: auto;
+}
+
+
+
+
+ body > div.escritorio > section > div:nth-child(1) > div:nth-child(1) > h5 {  /*Selector para "Primero lo primero"*/
+    font-family: 'jubilat-extralight-italic';
+    font-weight: 200;
+    font-size: 1.7em;
+    color: #823d24;
+    margin-top: 2em;
+    margin-left: 4.5em;
+}
+
+body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > h5 { /*Selector "pero y entonces..."*/
+  font-family: 'jubilat-extralight-italic';
+    font-weight: 200;
+    font-size: 1.7em;
+    color: #823d24;
+    margin-top: -1em;
+    margin-left: 0.6em;
+}
+
+.escritorio .pampa .fila  .columna  .queesla { /*Selector de "¿Qué es la"*/
+    font-family: 'jubilat-med';
+    font-weight: 300;
+    color: #823d24;
+    margin-top: 0em;
+    font-size: 5em;
+    margin-left: 1.7em;
+}
+body > div.escritorio > section > div:nth-child(1) > div:nth-child(1) > h1.pampagringa { /*Selector de Pampa Gringa*/
+  font-weight: 500;
+  font-family: 'Satisfy';
+  color: #823d24;
+  margin-top: 0em;
+  font-size: 5em;
+  margin-left: 1.7em;
+}
+
+body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > h1.quees {    /*Selector de ¿Qué es */
+  font-family: 'jubilat-med';
+  font-weight: 300;
+  color: #823d24;
+  margin-top: 0em;
+  margin-left: 0.3em;
+  font-size: 5em;
+}
+body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > h1.sergringo {    /*Selector de ser gringo?*/
+  font-weight: 500;
+  font-family: 'Satisfy';
+  color: #823d24;
+  margin-top: 0em;
+  margin-left: 0.3em;
+  font-size: 5em;
+}
+body > div.escritorio > section > div:nth-child(1) > div:nth-child(2) > p { /* Selector de texto sobre qué es la pampa*/
+  font-size: 1.2em;
+  font-family:'libre-baskerville-regular';
+  margin-top: 6em;
+  margin-left: 0em;
+  padding-left: 0em;
+  padding-right: 5.5em;
+  text-align: justify;
+}
+
+body > div.escritorio > section > div:nth-child(2) > div:nth-child(1) > p:nth-child(1){ /* Selector de texto sobre qué es ser gringo*/
+  font-family:'libre-baskerville-regular';
+  font-size: 1.2em;
+  text-align: justify;
+  padding-left: 5.5em;
+}
+.escritorio .pampa .fila  .columna .leer-mas {
+    font-family: 'Satisfy';
+    font-size: 1.6em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    position: relative;
+    border-left: 0.3em;
+    border-right: 0.3em;
+    width: 25%;
+    border: 0.07em solid #858c50;
+    border-radius: 0.2em;
+    box-shadow: 0em 0.2em 0.3em 0.02em lightgray;
+}
+body > div.escritorio > section > div:nth-child(1) > div:nth-child(1) > p { /*Selector de leer más del lado izquierdo del "Inicio"*/
+  position: absolute;
+  margin-left: 74%;
+  margin-top: 10%;
+
+}
+body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Selector de leer más del lado derecho del "Inicio"*/
+  position: relative;
+  margin-top: 4em;
+  margin-left:0.5em;
+}
+
+
+
+.escritorio .pampa .leer-mas > a {
+    color: #858c50;
+    text-decoration: none;
+    text-align:center;
+}
+
+.escritorio .pampa .fuente {
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+    /* margin-left: 1.5em; */
+    /* margin-right: 0em; */
+    margin-bottom: 1em;
+    margin-top: 3em;
+    text-align: justify;
+    padding-left: 7.8em;
+}
+
+/*Desaparezco la sección pampa correspondiente a la versión de celular*/
+
+.pampa {
+    display: none;
+}
+
+/*Nuestras secciones, versión de escritorio*/
+
+
+.secciones-escritorio {
+    margin-top: 10em;
+    background-color: rgba(0, 0, 0, 0.50);
+    border-radius: 4%; /*To do: averiguar por qué relación de aspecto en radio no es 1. Sospecho que es porque es un rectángulo, una solucióin*/
+    color: white;
+    padding-left: 15%;
+    padding-right: 15%;
+
+}
+
+.secciones-escritorio > h4 {
+    font-family: 'jubilat-extralight';
+    /* text-align: left; */
+    
+    margin-top: 1em;
+    font-weight: 600;
+    opacity: none;
+    font-size: 2em;
+    margin-bottom: 0.7em;
+    margin-left: -4em;
+    
+}
+
+.secciones-escritorio .fila {
+    display: flex;
+    /* gap: 0.01em; */
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+}
+
+.secciones-escritorio .columna {
+    flex: 1;
+    padding: 1em;
+}
+
+.secciones-escritorio .columna img.grande {
+    width: 100%;
+    height: auto;
+}
+
+.secciones-escritorio a {
+    text-decoration: none;
+    color: white;
+}
+
+.secciones-escritorio h1 {
+    font-family: serif;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.secciones-escritorio h2 {
+    font-family: 'Satisfy';
+    font-weight: 200;
+}
+
+/* Altrocché */
+.secciones-escritorio .altrocche img {
+    width: 100%;
+    height: auto;
+}
+
+.secciones-escritorio .altrocche .texto {
+    width: 100%;
+    margin-top: 1em;
+}
+
+/* Francófonas */
+.secciones-escritorio .francofonas .imagen,
+.secciones-escritorio .piamontesas .imagen {
+    width: 50%;
+    margin-top: 1em;
+}
+
+.secciones-escritorio .francofonas .texto,
+.secciones-escritorio .piamontesas .texto {
+    width: 50%;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) { /*Selector de imagen de migraciones y todos los textos que la acompañan*/
+
+  text-align: justify;
+  font-size: 1.2em;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) > a:nth-child(2) > h1 { /*Selector de título de migraciones*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 300;
+  padding-left: 1.2em;
+  padding-right: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) > h2 { /*Selector de parte en Satisfy de migraciones*/
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) > p { /*Selector de párrafo en baskerville (el de más abajo) de migraciones*/
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin:0;
+}
+
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) { /*Selector de imagen de LMO y todos los textos que la acompañan*/
+
+  text-align: justify;
+  font-size: 1.2em;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) > a:nth-child(2) > h1 { /*Selector de título de LMO*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 300;
+  padding-left: 1.2em;
+  padding-right: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+  /* padding-bottom: 0.4em; */
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) > h2 { /*Selector de parte en Satisfy de LMO*/
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) > p { /*Selector de párrafo en baskerville (el de más abajo) de LMO*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 100;
+  font-size: medium;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  margin:0;
+}
+
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1) > div > a > h1{ /*Selector de título de Altrocche*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 300;
+  padding-left: 1.2em;
+  padding-right: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1) > div > h2 { /*Selector de parte en Satisfy de Altrocche*/
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1) > div > p {/*Selector de párrafo en baskerville (el de más abajo) de Altrocche*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 100;
+  font-size: medium;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  margin:0;
+}
+
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(2) > div > a > h1{ /*Selector de título de Francófonas*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 300;
+  padding-left: 1.2em;
+  padding-right: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(2) > div > h2 {/*Selector de parte en Satisfy de Francófonas*/
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(2) > div > p {/*Selector de párrafo en baskerville (el de más abajo) de Francófonas*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 100;
+  font-size: medium;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  margin:0;
+}
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div > a > h1{/*Selector de título de Piamontesas*/
+  padding-left: 1.2em;
+  font-family:'libre-baskerville-regular';
+  font-weight: 300;
+  padding-right: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div > h2 {/*Selector de parte en Satisfy de Piamontesas */
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div > p {/*Selector de párrafo en baskerville (el de más abajo) de Piamontesas*/
+  font-family:'libre-baskerville-regular';
+  font-weight: 100;
+  font-size: medium;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  margin:0;
+}
+/*Nuestras secciones*/
+/*Desaparezco versión de celular de Nuestras secciones*/
+
+  .secciones{
+      display:none;
+  }
+
+/*Nuestros socios*/
+.companeros-escritorio {
+  display: flex;
+  flex-direction: row;
+  border-radius: 4%;
+  color: black;
+  padding-top: 6%;
+}
+
+.intro {
+  flex: 1;
+  padding-right: 2em;
+}
+
+.grilla {
+  display: grid;
+  flex: 3;
+  grid-template-columns: repeat(3, 1fr); /* Configuración de grilla como antes */
+  grid-template-rows: repeat(5, minmax(100px, 1fr)); /* Ajuste automático de filas */
+  gap: 3em; /* Aumentado el espacio entre los ítems */
+  margin-right: 10em;
+  
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  padding: 10%;
+  border: 0;
+  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+
+.partner-item img {
+  width: 30%; /* Reducción del tamaño de las imágenes en un 25% */
+  height: auto;
+  margin-right: 1em; /* Espacio entre la imagen y el texto */
+}
+
+.partner-item h2 {
+  padding: 0;
+  margin: 0;
+  font-family: 'libre-baskerville-bold';
+  font-weight: 300;
+  font-size: 0.9em;
+  flex: 1; /* Asegura que el texto ocupe el resto del espacio disponible */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(1) > div > p{ /*Texto de imagen...los selectores de abajo son lo mismo*/
+  padding: 0;
+  margin: 0;
+  font-family: 'libre-baskerville-regular';
+  font-weight: 100;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+  text-decoration: none;
+  
+}
+
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(1) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(2) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(3) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(4) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(5) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(6) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(7) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(8) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(9) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(10) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(11) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(12) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(13) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(14) > div > p > a,
+body > section.companeros-escritorio > div.grilla > div:nth-child(15) > div > p > a{ /*Texto de imagen...los selectores de abajo son lo mismo*/
+  text-decoration: none;
+  color: black;
+  font-family: 'libre-baskerville-regular';
+  font-weight: 100;
+  font-size: 0.9em;
+  
+}
+body > section.companeros-escritorio > div.grilla > div:nth-child(2) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(3) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(4) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(5) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(6) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(7) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(8) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(9) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(10) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(11) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(12) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(13) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(14) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+
+body > section.companeros-escritorio > div.grilla > div:nth-child(15) > div > p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: black; /* Opcional: color del texto */
+}
+.companeros-escritorio h4.nuestros {
+  font-family: 'jubilat-med';
+  color: #823d24;
+  font-weight: 200;
+  font-size: 4em;
+}
+
+.companeros-escritorio h4.companeros-cursiva {
+  font-family: 'Satisfy';
+  font-weight: 200;
+  color: #823d24;
+  margin-top: -0.45em;
+  font-size: 6em;
+}
+
+.companeros-escritorio p {
+  font-family: 'libre-baskerville-regular';
+  color: #823d24;
+  padding-left: 0em;
+  padding-right: 6.2em;
+  margin-top: -0.3em;
+  margin-left: 0em;
+  font-weight: 600;
+  font-size: 1.3em;
+  text-align: left;
+}
+body > section.companeros-escritorio > div.intro {
+  position: relative;
+  left: 10em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  top: -3em;
+}
+
+
+/*Desaparecer seccción compañeros de celular*/
+
+.companeros {
+  display: none;
+}
+
+/*Desaparecer footer de celular*/
+  .redes {
+      display:none;
+  }
+/*Footer de escritorio*/
+.redes-escritorio {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.50);
+  color: white;
+  padding-left: 18em;
+  border-radius: 1em 1em 0em 0em;
+  padding-right: 18em;
+  box-shadow: 1em 0em  1em #888888;
+}
+
+.column {
+
+  flex: 1;
+  padding: 1em;
+}
+
+.column h2,.redes-escritorio  .column h3  {
+  font-family: 'jubilat-extralight';
+  margin-top: 1.2em;
+  margin-left: 0.2em;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.redes-escritorio .column p {
+  font-family: 'Satisfy';
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  font-size: 1;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 0.5em;
+}
+
+.column a {
+  text-decoration: none;
+  color: white;
+}
+
+.column a:hover {
+  text-decoration: underline;
+}
+
+.column div img {
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+
+.logo-container {
+  margin-top: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  margin-right: 1em;
+}
+
+.logo-text h2 {
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'jubilat-extralight';
+  font-size: 2em;
+}
+
+
+.footer {
+  width: 100%;
+  height: 2.5em;
+  background-color: #282726;
+  color: white;
+  text-align: center;
+  font-size: 0.7em;
+  padding: 1em 0;
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-family: 'libre-baskerville-regular';
+}
+
+  /*****************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

@@ -1,0 +1,26 @@
+{
+  "name": "portal_gringo",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "build": "postcss estilos_escritorio.css -o extra/estilos_escritorio.min.css --no-map",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "D": "^1.0.0"
+  },
+        
+"browserslist": [
+  "defaults and fully supports es6-module",
+  "maintained node versions"     
+]
+}

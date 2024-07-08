@@ -1,0 +1,792 @@
+/*To do: usar el analizador de Chrome/Firefox para buscar elementos que exceden el width del viewport y ajustarlos.*/
+
+@font-face {
+    font-family: 'jubilat-bold'; 
+    src: url('fonts/Jubilat/Jubilat-Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-bold-italic'; 
+    src: url('fonts/Jubilat/Jubilat-BoldItalic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-light'; 
+    src: url('fonts/Jubilat/Jubilat-Light.otf') format('opentype');
+  }
+  
+  
+  @font-face {
+    font-family: 'jubilat-light-italic'; 
+    src: url('fonts/Jubilat/Jubilat-LightItalic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat'; 
+    src: url('fonts/Jubilat/Jubilat-Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-italict'; 
+    src: url('fonts/Jubilat/Jubilat-RegularItalic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-black'; 
+    src: url('fonts/Jubilat/JubilBla.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-black-italic'; 
+    src: url('fonts/Jubilat/JubilBlaIta.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-extralight'; 
+    src: url('fonts/Jubilat/JubilExtLig.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-extralight-italic'; 
+    src: url('fonts/Jubilat/JubilExtLigIta.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'jubilat-med'; 
+    src: url('fonts/Jubilat/JubilMed.otf') format('opentype');
+  }
+  
+
+  @font-face {
+    font-family: 'jubilat-extralight-italic'; 
+    src: url('fonts/Jubilat/JubilExtLigIta.otf') format('opentype');
+  }
+  
+  
+  @font-face {
+    font-family: 'libre-baskerville-italic'; 
+    src: url('C:/xampp/htdocs/portal_gringo/fonts/Libre Baskerville/LibreBaskerville-Italic.ttf') format('truetype');
+  }
+  
+  
+  @font-face {
+    font-family: 'libre-baskerville-bold'; 
+    src: url('fonts/Libre Baskerville/LibreBaskerville-Bold.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'libre-baskerville-regular'; 
+    src: url('C:/xampp/htdocs/portal_gringo/fonts/Libre Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+  }
+
+  @font-face{
+    font-family: 'Satisfy';
+    src: url('fonts/Satisfy/Satisfy-Regular.ttf') format('truetype');
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    /* margin: 0; */
+    padding-left: 0;
+  }
+  
+  
+  html { /*Root element*/
+    box-sizing: border-box;
+    font-size: 16px; /*Base font-size from wich I define the rest sizes relative to this*/
+  }
+  
+  body {  
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-image: url(img/fondo.png)
+  }
+  
+  div, h1, h2, h3, h4, h5 {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+  }
+  
+  
+  @media(max-width: 768px){
+  /*  To do: agregar layout para tablet
+  @media(max-width: 959px){
+  
+  } */
+  
+  /*TO DO: Meter todo esto dentro de un media query para pantallas de celular.*/
+  
+  /*Navbar*/
+  p {
+    font-family: 'libre-baskerville-regular';
+    font-size:0.8em;
+  }
+  nav {
+    width: 100vw;
+    height: 3em;
+    border-radius: 5%;
+    background-color: white;
+    position: fixed;
+    z-index:5;
+  }
+  
+  nav > div {
+    position: absolute; 
+    top: 10%;
+    left: 5%;
+    z-index: 6; 
+  }
+  
+  nav > div > img {
+    height: 70%;
+    width: 70%;
+    z-index: 7; 
+  }
+  
+  nav > button {
+    position: absolute;
+    top: 50%; /*To do:  chequear esta hardcodeada porque es para cagada en un futuro*/
+    left: 90%;
+  }
+  
+  
+  /*
+  nav > ul {
+    display: none;  Con el JS hago aparecer esto
+  }*/
+  
+   /*To do: agregar el oscurecimiento de las cosas de atrás a este menú!!! probablemente con un cuadrado que tenga degradé y transparencia*/
+   /*To do: hacer que no se pueda arrastrar la página desde el menú, hacer que el arrastre táctil se anule ahí" */
+   /*To do: agregar un hover para las opciones del nav*/
+  nav > ul#menu {
+    display: none;
+    position: absolute; /*Fijate que cuando poné algo absolute se pone arriba de otras cosas que no son absolute y tienen menor z-index (supera lo relative)*/
+    top: 55%;
+    right:0;
+    z-index:10;
+    list-style: none; 
+    background-color: white;
+    color: #858c50;
+    width:76%;
+    font-family: 'jubilat-bold';
+    border-radius: 3%;
+    height: 100vh;
+  }
+  
+  .cuadro-busqueda {
+    position: relative;
+    right:1.2em;
+    margin-left: 2.4em;
+    display: inline-block;
+  }
+  
+  .cuadro-busqueda > input {
+    position: relative;
+    border: 0.1em solid rgb(200, 200, 200);
+    padding: 1em;
+    padding-right: 2.5em; /* espacio adicional para la lupa */
+    border-radius: 5%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    height: 2em;
+    font-size: 1em;
+    font-family: 'libre-baskerville-regular';
+    outline: none;
+    display: inline-block;
+  }
+  
+  .lupa {
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    transform: translateY(-50%); /*ES CLAVE poner el cuadro-busqueda como relative para poder situar la lupita en relación a ese contenedor, porque si 
+    no no se puede "acoplar", acordate que los absolute no pueden ser usados como punto de referncia para los hijos relative, igual
+    entender bien esto...salió pero no lo entiendo 100%*/
+  }
+  .lupita-escritorio {
+    display: none;
+    
+  }
+  .lupa > img {
+    height: 1.3em; 
+    width: 1.25em;
+    cursor: pointer;  
+  }
+  
+  nav > ul > div.iconos{
+    display: flex;
+    gap: 10%;
+    position: absolute;
+    bottom: 25%;
+    height: max-content;
+    right: 5em; /*To do: desharcodear esto! (igual no está tan mal, pero puede mejorarse)*/
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav > ul > div> a > img{
+    width: 3em;
+    height: 3em;
+  }
+  
+  
+  nav > ul > p{
+    color: black;
+    padding-left:1em;
+    padding-right:0.5em;
+    font-family: 'libre-baskerville-regular';
+    position: absolute;
+    text-align: justify;
+    right: 2.5em;
+    bottom: 10%;
+    font-size: 0.8em;
+  }
+  
+  nav > ul > li > a {
+    text-decoration: none;
+    color:#858c50;
+  }
+  
+  nav > ul > li > ul > li> a {
+    text-decoration: none;
+    color: #981914
+  }
+  nav > ul > li{ 
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-right: 1.5em;
+  }
+  
+  nav > ul > li > ul { 
+    list-style: none; 
+    margin-right: 1em;
+    font-family: 'jubliat-extralight'
+  }
+  
+  .lupa-escritorio, .instagram-escritorio {
+    display:none;
+  }
+  nav > ul#menu > li > ul.submenu-archivos {
+    display: none;
+    position: relative;
+  }
+  
+  nav > ul#menu > li > ul.submenu-itinerarios {
+    display: none;
+  }
+  nav ul li.menu-active {
+    color: #981914;
+    top: 25%;
+  }
+  .menu-active img {
+    transform: rotate(180deg);
+}
+  nav > ul#menu > li > ul.submenu-sobreelportal {
+    display: none;
+  }
+  
+  /*To do: mirar bien esto*/
+  .flecha {
+    width: 10px;
+    height: 10px;
+    font-weight: 900;
+    z-index: 100;
+  }
+  /*Barra debajo de navbar*/
+  .separador-bajo-nav{
+    opacity: 0;
+    width: 100vw;
+    height: 3em;
+    background-color: black;
+    /* position: fixed; */
+    z-index:4;
+    /* margin: 10em; */
+  }
+  
+  /*Carrusel... más elementos de la página*/
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    display: block;
+  }
+  /*Desaparezco desktop*/
+  
+  
+  .carousel-escritorio, .carousel-escritorio-inner,  .carousel-escritorio-item,.carousel-escritorio-item img,.carousel-escritorio-titulo, .carousel-escritorio-leermas
+  .carousel-escritorio-leermas > h2>a {
+     display: none;
+  }
+  button.prev-escritorio, button.next-escritorio{
+    display: none;
+  }
+  /**/
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent !important; /*To do: revisar por qué tuve que poner important*/
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+
+  /**/
+
+  button.hamburguesa {
+    position: absolute;
+    top: 50%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:900;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #823d24;;
+    font-size:1.2em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button.prev {
+    left: 0%;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button.next {
+    right: 0%;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .carousel-titulo {
+    position: absolute;
+    top: 15%;
+    right: 4%;
+    /* transform: translateX(-50%); */
+    color: #f4f1e5;
+    font-family: 'jubilat-bold';
+    font-size: 0.6em;
+    z-index: 1;
+  }
+  
+  .carousel-leermas {
+    
+    position: absolute;
+    top: 70%;
+    right: 4%;
+    font-family: 'jubilat-extralight-italic';
+    font-size: 0.6em;
+    padding: 0.2em;
+    height: 2em;
+    border: 0.1em solid #f6efdd;
+    color: #f6efdd;
+    z-index: 1;
+  }
+  
+  .carousel-leermas > h2>a {
+    text-decoration: none;
+    color:#f6efdd;
+  }
+  
+
+  /*Inicio*/
+  .separador {
+    background-color: white; /*Base color*/
+  }
+  .separador.inicio{
+    border-radius: 0.5em;  
+    height: 2em;
+    box-shadow: 0em 0.25em 0.25em rgb(140, 140, 140);
+  }
+  .separador.inicio > h4{
+    color: #858c50;
+    font-family: 'jubilat-light';
+    position: relative;
+    top: 25%;
+    left: 6%;
+    width: 94%;
+  }
+  
+  /*Pampa*/
+  .pampa {
+    margin: 0px;
+  }
+  
+  .pampa.gringa > h5, .pampa.ser-gringo > h5 {
+    font-family: 'jubilat-extralight-italic';
+    color: #823d24;
+    margin-top: 2em;
+    margin-left: 1em;
+  
+  }
+  
+  .pampa.gringa > h1.queesla, .pampa.ser-gringo > h1.quees {
+    font-family: 'jubilat-med'; /*To do: poner tipografía correspondiente*/
+    font-weight: 300;
+    color: #823d24;
+    margin-top: 0.25em;
+    margin-left: 1em;
+    font-size: 2.5em;
+  }
+  
+  .pampa.gringa > h1.pampagringa,  .pampa.ser-gringo > h1.sergringo {
+    font-family: 'Satisfy';
+    font-weight: 500;
+    color: #823d24;
+    margin-top: 0em;
+    margin-left: 1em;
+    font-size: 2.5em;
+  }
+  
+  
+  .pampa.gringa > p, .pampa.ser-gringo > p {
+    font-family: 'libre-baskerville-regular'; /*To do: verificar que es la tipografía*/
+    margin: 1em;
+    text-indent: 1em;
+  }
+  
+  /*Los elementos es apilan margen a margen. Además, hay un fenómeno llamado "colapso de márgenes",
+  donde en realidad los márgenes se apilan entonces el espacio efectivo entre elementos es el definido por
+  el margen más grande*/
+  
+  .pampa.gringa.leer-mas, .pampa.ser-gringo.leer-mas  { 
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-top: 2em;
+    position: relative;
+    left: 35%; /*To do: calcular bien esto. Recordar que arrastra el margin el pampa.gringa*/
+    width: 65%
+  }
+  
+  .pampa.gringa.leer-mas > a, .pampa.ser-gringo.leer-mas > a { /*Los inline no tienen margin-top ni margin-bottom*/
+    color: #858c50;
+    text-decoration:none;
+    border: 0.1em solid #858c50;
+    padding: 0.5em;
+  } 
+  /*Nuestras secciones*/
+  
+  /*desaparezco desktop*/
+  .secciones-escritorio{
+    display: none;
+  }
+  
+  .secciones {
+    margin-top: 10em;
+    background-color: black;
+    opacity: 0.75;
+    border-radius: 4%; /*To do: averiguar por qué relación de aspecto en radio no es 1. Sospecho que es porque es un rectángulo, una solucióin*/
+    /*posible es hacer un cuadrado para la parte de arriba y abajo (dividir en 3 el backgound)*/
+    color:white;
+    padding: 6%;  
+  }
+  
+  .secciones > a{
+    text-decoration: none;
+    color: white;
+  }
+  .secciones >div >div> a{
+    text-decoration: none;
+    color: white;
+  }
+  .secciones > h4 {
+    font-family: 'jubilat-extralight';
+    margin-left: 30%; /*To do: calcular bien o usar una propiedad mejor que lo haga sola*/
+    /*margin-top: 5em;*/ /*Culpa del efecto de colapso de márgenes no sirve esto, peeero agregando <br> no colapsan! Tal vez puedo reemplazarlo por un div si no quiero usar un inline como <br>.*/
+    margin-top: 0em;
+  }
+  
+  .footer {
+    display: none;
+  }
+  .secciones > img.grande {
+    margin-top: 4%;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .secciones > h1.lmo {
+    font-family: serif; /*To do: ponerla bien a la tipo*/
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .secciones > h2.lmo {
+    font-family: 'Satisfy'; /*To do: ponerla bien a la tipo*/
+  }
+  
+  /*Migraciones*/
+  .secciones > h1.migraciones {
+    font-family: serif; /*To do: ponerla bien a la tipo*/
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .secciones > h2.migraciones {
+    font-family: 'Satisfy'; /*To do: ponerla bien a la tipo*/
+  }
+  
+  /*Secciones secundarias*/
+  /*Altrocché*/
+  .secciones >div.altrocche { /*Chequear bien el árbol DOM cuando veas que no te interpreta bien el navegador*/
+    margin: 0em;
+    /* background-color: black; Por alguna razón no se carga el color negro pero sí otros...averiguar eso sólo para sacarme la duda ¿qué duda? :)*/
+  }
+  
+  .secciones > div.altrocche > img { /*To do: uniformar  CSS con francofonas y piamontesas*/
+    width: 45%;
+    position: relative;
+    /* height: 50%; */
+    top: -3em; /*To do: deshardcodear esto...*/
+  }
+  
+  .secciones  > div.altrocche > div {
+    width: 45%;
+    position: relative;
+    /* left: 55%; */
+    display: inline-block;
+  }
+  /*Francófonas*/
+  
+  .secciones > div.francofonas > div.imagen {
+    width: 45%;
+    position: relative;
+    top: -5em;/*To do: deshardcodear esto...*/
+    margin: 0; 
+    height: 100%;
+    display: inline-block;
+  }
+  
+  .secciones > div.francofonas > div.texto {
+    width: 45%;
+    position: relative;
+    height: auto;
+    display: inline-block;
+  } 
+  
+  body > section.secciones > div.francofonas > div.texto > h2 {
+    font-family: 'Satisfy'; /*To do: ponerla bien a la tipo*/
+  }
+
+  body > section.secciones > div.altrocche > div > h2{
+    font-family: 'Satisfy'; /*To do: ponerla bien a la tipo*/
+  }
+  
+  /*Piemontesas*/
+  body > section.secciones > div.piamontesas > div.texto > h2{
+    font-family: 'Satisfy'; /*To do: ponerla bien a la tipo*/
+  }
+  
+  /*To do: arreglar la pisadita de la imagen de los piamonteses*/
+  .secciones > div.piamontesas > div.imagen {
+    width: 45%;
+    position: relative;
+    top: -5em; /*To do: deshardcodear esto...*/
+    margin: 0; 
+    height: 100%;
+    display: inline-block;
+  }
+  body > section.companeros > div > div:nth-child(1) > p > a,
+  body > section.companeros > div > div:nth-child(2) > p > a,
+  body > section.companeros > div > div:nth-child(3) > p > a,
+  body > section.companeros > div > div:nth-child(4) > p > a,
+  body > section.companeros > div > div:nth-child(5) > p > a,
+  body > section.companeros > div > div:nth-child(6) > p > a,
+  body > section.companeros > div > div:nth-child(7) > p > a,
+  body > section.companeros > div > div:nth-child(8) > p > a,
+  body > section.companeros > div > div:nth-child(9) > p > a,
+  body > section.companeros > div > div:nth-child(10) > p > a,
+  body > section.companeros > div > div:nth-child(11) > p > a,
+  body > section.companeros > div > div:nth-child(12) > p > a,
+  body > section.companeros > div > div:nth-child(13) > p > a,
+  body > section.companeros > div > div:nth-child(14) > p > a,
+  body > section.companeros > div > div:nth-child(15) > p > a{
+   text-decoration: none; 
+   color: black;
+  }
+
+  .secciones > div.piamontesas > div.texto {
+    width: 45%;
+    position: relative;
+    display: inline-block;
+  }
+  .escritorio {
+    display: none;
+  }
+  /*Nuestros compañeros*/
+  /*Desaparecer compañeros desktop*/
+  .companeros-escritorio {
+    display: none;
+  }
+  .companeros > h4.nuestros{
+    font-family: 'jubilat-med'; /*To do: poner tipografía correspondiente*/
+    color: #823d24;
+    margin-top: 0.25em;
+    margin-left: 1em;
+    font-size: 2.5em;
+  }
+  
+  .companeros > h4.companeros-cursiva{
+    font-family: 'Satisfy';  
+    color: #823d24;
+    margin-top: 0em;
+    margin-left: 1em;
+    font-size: 2.5em;
+  }
+  
+  
+  .companeros > p {
+    color: #823d24;
+    padding: 1em; /*To do: fijate este espaciado*/
+  }
+  
+  
+  
+  .companeros .grilla { /*Si el contenido excede el grid pueden quedar raras las alineaciones de los elementos*/
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(8,1fr);
+    gap: 1em;
+  }
+  /*To do: usar grid para definir esta sección*/ 
+  
+  .partner-item{
+    padding: 0px; /* Espaciado interno */
+    border: 0px solid #ccc; /* Borde para visualización */
+    text-align: center; /* Centrado del texto */
+  }
+  
+  
+  .partner-item > h2{
+    padding: 0px; /* Espaciado interno */
+    border: 0px solid #ccc; /* Borde para visualización */
+    text-align: center; /* Centrado del texto */
+    font-size: 1em;
+  }
+  /*desaparezco escritorio*/
+  .redes-escritorio{
+    display:none;
+  }
+
+  
+  
+  .redes {
+    margin-top: 10em;
+    background-color: black;
+    opacity: 0.85;
+    border-radius: 4%; /*To do: averiguar por qué relación de aspecto en radio no es 1. Sospecho que es porque es un rectángulo, una solucióin*/
+    /*posible es hacer un cuadrado para la parte de arriba y abajo (dividir en 3 el backgound)*/
+    color:white;
+    padding: 6%;  
+  }
+  
+  .redes > h4.nuestrasredes {
+    font-family: 'libre-baskerville-regular'; /*To do: verificar tipografía*/
+    margin: 1em;
+    padding-left: 26%; /* To do: calcular bien esto*/
+  }
+  .redes > h4.mantenteinformado {
+    font-family: 'satisfy'; /*To do: cambiar tipografía*/
+    margin: 1.5em;  /* To do: calcular bien esto*/
+    padding-left: 1.6em; /* To do: calcular bien esto*/
+    font-size: 1.1em;
+    font-weight: 200;
+  } 
+  
+  .imagenes {
+    padding: 1em;
+    /* margin-left: 1em; */
+  }
+  
+  .redes > p {
+    margin: 0;
+    position: relative;
+    /* left: 0em; */
+    text-align:center;
+  }
+  
+  
+  /*Rules for cellphone layout*/
+    .pampa > p.fuente {
+      display: none; /*Don't show fountain(?)*/
+    }
+  }
+  
+  body > div.redes-escritorio > div:nth-child(1) > ul > li:nth-child(1) {
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+  body > div.redes-escritorio > div:nth-child(1) > ul > li:nth-child(2){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+
+  body > div.redes-escritorio > div:nth-child(1) > ul > li:nth-child(3){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+  
+  body > div.redes-escritorio > div:nth-child(1) > ul > li:nth-child(4){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+
+  body > div.redes-escritorio > div:nth-child(3) > ul > li:nth-child(1){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+  
+  body > div.redes-escritorio > div:nth-child(3) > ul > li:nth-child(2){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+  
+  body > div.redes-escritorio > div:nth-child(3) > ul > li:nth-child(3){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+  
+  body > div.redes-escritorio > div:nth-child(3) > ul > li:nth-child(4){
+    font-family: 'libre-baskerville-regular';
+    font-size: small;
+  }
+
+  body > div.redes-escritorio > div:nth-child(1) > p{
+    font-family: 'Satisfy'; 
+    font-size: 1.3em;   
+  }
