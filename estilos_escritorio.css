@@ -1,11 +1,3 @@
-
-  /*Version de escritorio */
-
-  /*ETIQUETAS ESTÁN ORDENADAS SIGUIENDO EL SIGUIENTE CRITERIO (DESCENDENTEMENTE SI LOS DE ARRIBA EMPATAN):
-  1) EN ORDEN DE APARICIÓN EN EL HTML
-  2) JERARQUICAMENTE DE ACUERDO A ENVOLTURAS DE ETIQUETAS HTML.
-  3) ALFABÉTICAMENTE EN CASO DE ESTAR AL MISMO NIVEL*/
-
 @media(min-width: 768px){
 
   nav {
@@ -41,8 +33,7 @@
     list-style: none;
     color: #858c50;
     width:100%;
-    font-family: 'jubilat-bold';
-    font-size: 1em;
+    
     justify-content: space-between;
   }
 
@@ -51,25 +42,24 @@
     margin-left: 1.5em;
     display: inline-block;
     top: 33%;
+    font-family: 'jubilat-regular';
+    font-size: 1.1em;
+    font-weight: 700;
   }
 
   nav > ul > li:hover{
     margin: 0;
     margin-left: 1.5em; 
     display: inline-block;
-    top: 25%;  /*Algo interesantes que se puede hacer es que suban un poquito los íconos con el hover*/
-    /* color: #171414; */
+    color:#981914;
     cursor: pointer;
   }
-/*
-  nav > ul > li > a:hover{
-    margin: 0;
-    display: inline-block;
-    top: 25%;
-    color: #171414;
-    cursor: pointer;
-  } */
-  /*Estas etquetas li.[nombre de clase] están ordenadas por el orden visual*/
+
+  nav > ul > li:hover img {
+    filter: hue-rotate(0deg) saturate(100%) brightness(0) invert(20%) sepia(100%) saturate(1000%) hue-rotate(-50deg) brightness(100%);
+  }
+
+  /*Estas etiquetas li.[nombre de clase] están ordenadas por el orden visual*/
   nav > ul > li.archivos {
     position: absolute;
     left: 8.3%;
@@ -81,6 +71,15 @@
   nav > ul > li.escritores {
     position: absolute;
     left: 25.9%;
+  }
+
+    nav > ul > li.escritores {
+    position: absolute;
+    left: 25.9%;
+  }
+
+  nav > ul > li.escritores > a:hover, nav > ul > li.colonias > a:hover {
+    color: #981914;
   }
 
   nav > ul > li.colonias{
@@ -96,13 +95,56 @@
   nav > ul > li.instagram-escritorio{
     position: absolute;
     right: 4%;
+    transition: transform 0.5s ease;
   }
 
   nav > ul > li.lupita-escritorio{
     position: absolute;
     right: 1%;
+    transition: transform 0.5s ease;
   }
-
+  .lupita-cuadro-busqueda {
+    position: absolute;
+    right: 1%;
+    margin-left: 2.4em;
+    display: none;
+  }
+  #lupita-input-cuadro-busqueda {
+    position: absolute;
+    right: 1%;
+    top: -0.1em;
+    height: 2em;
+    display: block; /* Mostrar el input para permitir la transición */
+    z-index: 1000;
+    transition: width 0.31s ease, margin 0.5s ease, padding 0.5s ease, border 0.5s ease, opacity 0.7s ease; /* Transición para suavidad */
+    width: 0; /* Inicialmente oculto */
+    overflow: hidden; /* Evita contenido desbordado */
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    /* border: 0.1em solid rgb(200, 200, 200);
+    padding: 1em;
+    padding-right: 2.5em;
+    border-radius: 5%; */
+    opacity: 0%;
+    font-size: 1em;
+    
+    cursor: default; /* Mantiene el cursor sin cambiar */
+  }
+  
+  #lupita-input-cuadro-busqueda.mostrar {
+    width: 20%; /* Ancho deseado al mostrar */
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    border: 0.1em solid rgb(200, 200, 200);
+    padding: 1em;
+    padding-right: 2.5em;
+    border-radius: 5%;
+    font-size: 1em;
+    opacity:100%;
+    font-family: 'libre-baskerville-regular';
+  }
+  
+  
   nav > ul > li.iconos-escritorio li.instagram-escritorio .menu-active{
     position: absolute;
     right: 8%;
@@ -145,7 +187,6 @@
 
   nav ul li.menu-active {
     color: #981914;
-    top: 25%;
   }
 
   /*Desaparezco cuadro de búsqueda, iconos, textos y el botón hamburguesa del menú de celular*/
@@ -172,7 +213,6 @@
     display:none;
   }
 
-
   .carousel-escritorio {
     position: relative;
     width: 100%;
@@ -180,55 +220,49 @@
     margin: auto;
     overflow: hidden;
   }
-
+  
   .carousel-escritorio-inner {
     display: flex;
     transition: transform 0.5s ease;
   }
-
+  
   .carousel-escritorio-item {
-    /* min-width: 100%; */
-    width: 100vw;
+    min-width: 100%;
     box-sizing: border-box;
     position: relative;
   }
-
+  
   .carousel-escritorio-item img {
-    width: 100vw;
-    /* height:  */
+    width: 100%;
+    height: auto;
     display: block;
   }
-
-button.prev-escritorio {
-    left: 10px;
+  
+  button.prev-escritorio, button.next-escritorio {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    border: none;
     background: transparent;
+    border: none;
     padding: 10px;
     cursor: pointer;
   }
-
+  
+  button.prev-escritorio {
+    left: 10px;
+  }
+  
   button.next-escritorio {
     right: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
   }
+  
   .textos-imagen-carousel {
     position: absolute;
     top: 25%;
     right: 40%;
-    width:70%;
-/*       
-    padding-bottom: 0.6em;
-    padding-top: 0.6em; */
+    width: 70%;
   }
+  
   .carousel-escritorio-titulo {
     flex: 1;
     position: absolute;
@@ -243,7 +277,6 @@ button.prev-escritorio {
     z-index: 1; 
     text-align: right; 
   }
-
   
   .carousel-escritorio-leermas {
     flex: 1;
@@ -255,50 +288,44 @@ button.prev-escritorio {
     font-size: 1em;
     font-weight: 100;
     text-align: center;
-    /* padding-right: */
-
     height: 3em;
     border: 0.1em solid #f6efdd;
     color: #f6efdd;
     z-index: 1;
     border-radius: 8%;
-    
   }
-  body > div.carousel-escritorio > div > div.carousel-escritorio-item.active > div.carousel-escritorio-titulo > h1 { /*Selector texto carrusel 1*/
- 
-    position: absolute;
-    
-  }
-  body > div.carousel-escritorio > div > div:nth-child(2) > div.carousel-escritorio-titulo > h1{ /*Selector texto carrusel 2*/
-    /* text-align: right; */
-    position: absolute;
-  }
-
-  .carousel-escritorio-leermas > h2>a {
+  
+  .carousel-escritorio-leermas > h2 > a {
     text-decoration: none;
-    color:#f6efdd;
+    color: #f6efdd;
   }
-
-
-/*Inicio*/
-.separador {
-    background-color: white; /*Base color*/
+  .separador {
+    background-color: white; /* Base color */
+    width: 100%; /* Asegura que el contenedor tenga un ancho del 100% */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    overflow: hidden; /* Evita que el contenido desborde */
   }
-  .separador.inicio{ /*To do: cambiar margen de esto*/
+  
+  .separador.inicio { 
     border-radius: 0.5em;
     height: 2.5em;
     box-shadow: 0em 0.25em 0.25em rgb(140, 140, 140);
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 1em; /* Añade padding para el contenido interno */
   }
-  .separador.inicio > h4{
+  
+  .separador.inicio > h4 {
     color: #858c50;
     font-family: 'jubilat-light';
     position: relative;
     font-size: 1.6em;
-    top: 10%;
-    left: 6%;
-    width: 94%;
+    margin: 0; /* Elimina márgenes */
+    top: 50%;
+    transform: translateY(-50%); /* Centra verticalmente el texto */
+    width: auto; /* Ajusta el ancho al contenido */
+    left: 0;
   }
-
+  
   .escritorio {
     position: relative;
 }
@@ -313,20 +340,26 @@ button.prev-escritorio {
 }
 
 .escritorio .detalle2 {
-    top: 12em;
-    left: 5em;
-    z-index:11;
+    top: 21em;
+    left: 7em;
+    z-index:4;
 }
 
 .escritorio .detalle3 {
-    top: 13em;
-    left: 5em;
+    top: 22em;
+    left: 7em;
 }
 
+.escritorio .detalle2 > img , .escritorio .detalle3 > img {
+  width: 110%;
+  height: 110%;
+}
 .escritorio .detalle4 {
     bottom: -10.39em;
     right: 14em;
     z-index:-1;
+    background: transparent;
+    mix-blend-mode: darken;
 }
 
 .escritorio .detalle5 {
@@ -437,17 +470,21 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(1) > p:nth-ch
     width: 25%;
     border: 0.07em solid #858c50;
     border-radius: 0.2em;
-    box-shadow: 0em 0.2em 0.3em 0.02em lightgray;
+    box-shadow: 0.05em 0.05em 0.2em 0.02em #00000033; /*Para asignar adecuadamente shadow, poné los 5 parámetros. Usá píxeles primero. Los 2 primeros
+    son posicionales, el box-shadow en realidad es una duplicación con z-index n-1 al n de la caja en cuestión. El 3er parámetro es blurr gaussiano 
+    y el último es el color. La idea es esta: poné la caja en una cantidad x=yy determinada, sin blurr. Ponela como te guste, luego dale el blurr.
+    Es clavicordio el opacity algunas veces.*/
 }
+
 body > div.escritorio > section > div:nth-child(1) > div:nth-child(1) > p { /*Selector de leer más del lado izquierdo del "Inicio"*/
   position: absolute;
   margin-left: 74%;
-  margin-top: 10%;
+  margin-top: 27%;
 
 }
 body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Selector de leer más del lado derecho del "Inicio"*/
   position: relative;
-  margin-top: 4em;
+  margin-top: 8em;
   margin-left:0.5em;
 }
 
@@ -455,7 +492,7 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Sel
 
 .escritorio .pampa .leer-mas > a {
     color: #858c50;
-    text-decoration: none;
+    text-decoration: none;  
     text-align:center;
 }
 
@@ -482,7 +519,7 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Sel
 .secciones-escritorio {
     margin-top: 10em;
     background-color: rgba(0, 0, 0, 0.50);
-    border-radius: 4%; /*To do: averiguar por qué relación de aspecto en radio no es 1. Sospecho que es porque es un rectángulo, una solucióin*/
+    border-radius: 1.8%; /*To do: averiguar por qué relación de aspecto en radio no es 1. Sospecho que es porque es un rectángulo, una solucióin*/
     color: white;
     padding-left: 15%;
     padding-right: 15%;
@@ -515,11 +552,16 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Sel
     padding: 1em;
 }
 
-.secciones-escritorio .columna img.grande {
-    width: 100%;
+.secciones-escritorio .columna img.grande { /*Selector imágenes LMO y Migraciones*/
+    width: 101%;
     height: auto;
 }
-
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) { /*Selector columna izq*/
+  padding-right: 0.4em;
+}
+body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) { /*Selector columna der*/
+  padding-left:0.4em;
+}
 .secciones-escritorio a {
     text-decoration: none;
     color: white;
@@ -536,21 +578,16 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Sel
     font-weight: 200;
 }
 
-/* Altrocché */
-.secciones-escritorio .altrocche img {
-    width: 100%;
-    height: auto;
-}
 
 .secciones-escritorio .altrocche .texto {
     width: 100%;
     margin-top: 1em;
 }
 
-/* Francófonas */
-.secciones-escritorio .francofonas .imagen,
-.secciones-escritorio .piamontesas .imagen {
-    width: 50%;
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1) > div.imagen > a > img,
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(2) > a > img,
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div.imagen > a > img{
+    width: 110%;
     margin-top: 1em;
 }
 
@@ -558,6 +595,22 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Sel
 .secciones-escritorio .piamontesas .texto {
     width: 50%;
 }
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1){ /*Selector columna altrocche*/
+  padding-right:1.6em;
+  padding-left:1.6em;
+}
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(2){ /*Selector columna francófonas*/
+  padding-right:1.6em;
+  padding-left:1.6em;
+}
+
+body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3){ /*Selector columna piemontesas*/
+  padding-right:1.6em;
+  padding-left:1.6em;
+}
+
+
 body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) { /*Selector de imagen de migraciones y todos los textos que la acompañan*/
 
   text-align: justify;
@@ -707,12 +760,22 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div 
   color: black;
   padding-top: 6%;
 }
-
+.detalle-socios >img{
+  position:absolute;
+  z-index: 99999;
+  top:60%;
+  left:10%;
+  mix-blend-mode: darken;
+}
 .intro {
   flex: 1;
   padding-right: 2em;
 }
 
+body > section.companeros-escritorio > div.intro > p{
+  font-family: 'libre-baskerville';
+  font-weight: 500;
+}
 .grilla {
   display: grid;
   flex: 3;
@@ -741,7 +804,7 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div 
   padding: 0;
   margin: 0;
   font-family: 'libre-baskerville-bold';
-  font-weight: 300;
+  font-weight: 100;
   font-size: 0.9em;
   flex: 1; /* Asegura que el texto ocupe el resto del espacio disponible */
 }

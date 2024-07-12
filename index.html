@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link href="estilos_escritorio.min.css" rel="stylesheet">
-    <link href="estilos_celular.min.css" rel="stylesheet">
+    <link href="estilos_escritorio.css" rel="stylesheet">
+    <link href="estilos_celular.css" rel="stylesheet">
 </head>
 <body>
     
@@ -18,7 +18,7 @@
         </div>
         <ul id="menu">  
             <li class="placeholder-logo"></li>
-            <li class="archivos">Archivos  &nbsp&nbsp<img src="img/flecha_abajo.png" alt="Flecha hacia abajo"> <!--Poner flecha en .svg para que se adapte mejor-->
+            <li class="archivos">Archivos  &nbsp&nbsp<img class="flecha-menu" src="img/flecha_abajo.png" alt="Flecha hacia abajo"> <!--Poner flecha en .svg para que se adapte mejor-->
                 <ul class="submenu-archivos">
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/archivos.html">archivos</a></li>
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/archivos_cartografias.html">cartografías</a></li>
@@ -31,7 +31,7 @@
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/archivos_prensa.html">prensa</a></li>
                 </ul>
             </li>
-            <li class="itinerarios">Itinerarios &nbsp&nbsp<img src="img/flecha_abajo.png" alt="Flecha hacia abajo">
+            <li class="itinerarios">Itinerarios &nbsp&nbsp<img class="flecha-menu" src="img/flecha_abajo.png" alt="Flecha hacia abajo">
                 <ul class="submenu-itinerarios">
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/itinerarios_arq.html">arquitectura</a></li>
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/itinerarios_artes.html">artes</a></li>
@@ -47,7 +47,7 @@
             </li>
             <li class="escritores"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/itinerario_biblioteca_escritores.html">Escritores</a></li>
             <li class="colonias"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/mapa_interactivo2.html">Colonias</a></li>
-            <li class="sobreelportal">Sobre el portal &nbsp&nbsp<img src="img/flecha_abajo.png" alt="Flecha hacia abajo">
+            <li class="sobreelportal">Sobre el portal &nbsp&nbsp<img class="flecha-menu" src="img/flecha_abajo.png" alt="Flecha hacia abajo">
                 <ul class="submenu-sobreelportal">
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/portal.html">nuestra historia</a></li>
                     <li><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/portal_fines.html">propósitos</a></li>
@@ -59,7 +59,7 @@
                 <label for="busqueda"></label>
                 <input type="text" id="busqueda" placeholder="¿Qué estás buscando?" name="busqueda">
                 <div class="lupa">
-                    <img src="img/lupa.png" alt="">
+                    <img  src="img/lupa.png" alt="">
                 </div>
             </form>
             <div class="iconos">
@@ -75,9 +75,14 @@
             <li class=".iconos-escritorio instagram-escritorio">
                 <a href="https://www.instagram.com/portal_memoria_gringa"><img src="img/instagram.png" alt=""></a>
             </li>
-            <li class=".iconos-escritorio lupita-escritorio">
-                <a href="#buscar"><img src="img/lupa.png" class="lupita-escritorio" alt=""></a>
-            </li>
+            <li class="iconos-escritorio lupita-escritorio" id="lupa-container">
+                <a href="#" id="lupa-busqueda"><img src="img/lupa.png" class="lupita-escritorio" alt=""></a>
+              </li>
+              <li>
+                <label for="busqueda"></label>
+                <input type="text" id="lupita-input-cuadro-busqueda" placeholder="¿Qué estás buscando?" name="busqueda">
+              </li>
+              
         </ul>
         <button class="hamburguesa">
             ☰
@@ -99,7 +104,7 @@
                     <h1>Semana de la <br> piemontesidad</h1>
                 </div>
                 <div class="carousel-leermas">
-                    <h2><a href="#">Leer más</a></h2> <!--To do now: poner link-->
+                    <h2><a href="#">Leer más</a></h2> <!--To do now: poner link. ¿Link, qué link, Link Deku?-->
                 </div>
             </div>
             
@@ -109,7 +114,7 @@
                     <h1>Visita a la <br> Estancia Santa Rosa</h1> 
                 </div>
                 <div class="carousel-leermas">
-                    <h2><a href="#">Leer más</a></h2><!--To do now: poner link-->
+                    <h2><a href="#">Leer más</a></h2><!--To do now: poner link. Primero saber qué link poner-->
                 </div>
             </div>
         </div>
@@ -142,15 +147,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="carousel-escritorio-item">
-                <img src="img/carrusel1escritorio.png" alt="Imagen 3">
-                <div class="carousel-escritorio-titulo">
-                    <h1>Visita a la <br> Estancia Santa Rosa 3</h1>
-                </div>
-                <div class="carousel-escritorio-leermas">
-                    <h2><a href="#">Leer más</a></h2>
-                </div>
-            </div> -->
         </div>
     
         <button class="prev-escritorio"><img src="img/flecha_izq.png" alt="Prev"></button>
@@ -166,7 +162,7 @@
             <h1 class="queesla">¿Qué es la</h1>
             <h1 class="pampagringa">Pampa Gringa?</h1>
             <p>La Pampa Gringa es una región geográfico-cultural que se corresponde con el centro y sur de la Provincia de Santa Fe, el norte de la Provincia de Buenos Aires y el este de Córdoba. Se constituyó cuando la cultura de los/as inmigrantes fue trasplantada a nuestra tierra a partir de la llegada de la inmensa masa de extranjeros que ingresaron por oleadas a la Argentina a partir de la segunda mitad del siglo XIX. La incidencia de la cultura inmigrante es clave en la definición de los perfiles idiosincráticos de la sociedad de la Pampa Gringa y de la Argentina contemporánea. Al tratarse de una región atravesada por lo cultural, resulta complejo establecer límites claros para este territorio.</p>
-            <p class="pampa gringa leer-mas"><a href="#">Leer más</a></p> <!--To do now: poner link-->
+            <p class="pampa gringa leer-mas"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/portal_fines.html">Leer más</a></p>
         </div>
         
         <div class="pampa ser-gringo">
@@ -175,7 +171,7 @@
             <h1 class="sergringo"> ser gringo?</h1>
             <p>El término “gringo” debe pensarse en clave histórica y polisémica. Así, si bien en un comienzo el “lo gringo” remitió a aquellas personas que no hablaban el idioma castellano, en Argentina se delimitó a la referencia a los italianos y, en particular, a los italianos del norte de Italia como los piamonteses y lombardos; en contraposición, los “tanos” aludían a los inmigrantes del sur de Italia. Esta acepción del “ser gringo” tiene que ver con la supremacía de las tasas migratorias de los llegados de Italia por sobre los demás países europeos. Sin embargo, con el correr del siglo XX, en la Pampa Gringa el término “gringo” se relacionó con los habitantes de los pequeños pueblos y ciudades del interior de la Provincia de Santa Fe, mientras que las grandes ciudades de la zona desarrollaron el uso de los vocablos: italianos, piamonteses, tanos, chacareros, colonos, entre otros.</p>
             <p class="fuente">Fuente: “Ser gringo: de la significación de un término a su representación social”, por María Luisa Ferraris en Migraciones y espacios ambiguos (2018).</p> <!--To do: darle estilo a esta parte.-->
-            <p class="pampa ser-gringo leer-mas"><a href="#">Leer más</a></p><!--To do now: poner link-->
+            <p class="pampa ser-gringo leer-mas"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/portal_gringo.html">Leer más</a></p>
         </div>
         
     </section>
@@ -200,7 +196,7 @@
                     <h5>Primero lo primero</h5>
                     <h1 class="queesla">¿Qué es la</h1>
                     <h1 class="pampagringa">Pampa Gringa?</h1>
-                    <p class="pampa gringa leer-mas"><a href="#">Leer más</a></p> <!--To do now: poner link-->
+                    <p class="pampa gringa leer-mas"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/portal_fines.html">Leer más</a></p> <!--To do now: poner link-->
                 </div>
                 <div class="columna">
                     <p>La Pampa Gringa es una región geográfico-cultural que se corresponde con el centro y sur de la Provincia de Santa Fe, el norte de la Provincia de Buenos Aires y el este de Córdoba. Se constituyó cuando la cultura de los/as inmigrantes fue trasplantada a nuestra tierra a partir de la llegada de la inmensa masa de extranjeros que ingresaron por oleadas a la Argentina a partir de la segunda mitad del siglo XIX. La incidencia de la cultura inmigrante es clave en la definición de los perfiles idiosincráticos de la sociedad de la Pampa Gringa y de la Argentina contemporánea. Al tratarse de una región atravesada por lo cultural, resulta complejo establecer límites claros para este territorio.</p>
@@ -216,7 +212,7 @@
                     <h5>pero y entonces...</h5>
                     <h1 class="quees">¿Qué es</h1>
                     <h1 class="sergringo"> ser gringo?</h1>
-                    <p class="pampa ser-gringo leer-mas"><a href="#">Leer más</a></p><!--To do now: poner link-->
+                    <p class="pampa ser-gringo leer-mas"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/portal_gringo.html">Leer más</a></p>
                     <!-- ((((((((((((((())))))  ))))))))) -->
                     <div class="detalle  detalle4">
                         <img src="img\inicio_der1.svg" alt="">
@@ -236,43 +232,70 @@
     <section class="secciones"> 
         <br>
         <h4>Nuestras secciones</h4>
-        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html"><img src="img/lmo.png" alt="" class="grande"></a>
-        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html"><h1 class="lmo">Laboratorio de Materiales Orales</h1></a>
+        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html">
+            <img src="img/lmo_escritorio.svg" alt="" class="grande">
+        </a>
+        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html">
+            <h1 class="lmo">Laboratorio de Materiales Orales</h1>
+        </a>
         <h2 class="lmo">LMO</h2>
         <p>Este espacio pretende recuperar y registrar las voces e historia de inmigrantes italianos, francófonos y de otras proveniencias, y sus descendientes, radicados en la Pampa Gringa.</p>
-        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/"><img src="img/migraciones.png" alt="" class="grande"></a>
-        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/"><h1 class="migraciones">Programa de estudio sobre Migraciones</h1></a>
+        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/">
+            <img src="img/migraciones_escritorio.svg" alt="" class="grande">
+        </a>
+        <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/">
+            <h1 class="migraciones">Programa de estudio sobre Migraciones</h1>
+        </a>
         <h2 class="migraciones">Lina y Charles Beck Bernard</h2>
         <p>Espacio pluridisciplinario para el estudio en los perfiles identitarios santafesinos y argentinos.</p>
         <br>
         <div class="altrocche">
-            <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/"><img src="img/altrocche.png" alt="" class=""></a>
+            <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/">
+                <img src="img/altrocche.png" alt="" class="">
+            </a>
             <div class="texto">
-                <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/"><h1 class="altrocche">¡Altrocché!</h1></a>
+                <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/">
+                    <h1 class="altrocche">¡Altrocché!</h1>
+                </a>
                 <h2 class="altrocche">Museo Virtual</h2>
                 <p>El proyecto realizado con subsidio de la Provincia de Santa Fe se propuso generar un espacio virtual para ampliar el conocimiento de la cultura migrante italiana en la región. </p>
             </div>
         </div>
         <br>
+
         <div class="francofonas">
-            <div class="texto" >
-                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/FRANCOFONOS/index.html"><h1 >Migraciones Francófonas</h1></a>
+            <div class="texto">
+                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/FRANCOFONOS/index.html">
+                    <h1>Migraciones Francófonas</h1>
+                </a>
                 <h2>En Santa Fe y sus alrededores</h2>
                 <p>La densidad histórica de las matrices culturales Francófonas en Santa Fe han contribuido a conformar un paradigma cultural identitario que se recuperan en este espacio virtual.</p>
             </div>
-            <div class="imagen"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/FRANCOFONOS/index.html"><img src="img/francofonas.png" alt=""></a></div>
+            <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/FRANCOFONOS/index.html">
+                <img src="img/francofonas.png" alt="" class="">
+            </a>
+            
         </div>
+
         <br>
         <div class="piamontesas">
-            <div class="imagen"><a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html"><img src="img/piamontesas.png" alt="" ></a></div>
+            <div class="imagen">
+                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html">
+                    <img src="img/piemontesas.png" alt="">
+                </a>
+            </div>
             <div class="texto">
-                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html"><h1>Migraciones Piamontesas</h1></a>
+                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html">
+                    <h1>Migraciones Piamontesas</h1>
+                </a>                
                 <h2>En la pampa Gringa</h2>
-                <p>En la Pampa Gringa la inmigración piemontesa registra los niveles más elevados con respecto al resto del  mundo.</p>
-                <p>Invitamos a conocerlo...</p>
+                <p>En la Pampa Gringa la inmigración piemontesa registra los niveles más elevados con respecto al resto del  mundo.
+                    Invitamos a conocerlo...</p>
             </div>
         </div>
+        
     </section>
+    
 
     <!--To do: desduplicar esto para desktop..-->
     <section class="secciones-escritorio"> 
@@ -281,13 +304,13 @@
         
         <div class="fila">
             <div class="columna">
-                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html"><img src="img/lmo.png" alt="" class="grande"></a>
+                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html"><img src="img/lmo_escritorio.svg" alt="" class="grande"></a>
                 <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/LHO/lho.html"><h1 class="lmo">Laboratorio de Materiales Orales</h1></a>
                 <h2 class="lmo">LMO</h2>
                 <p>Este espacio pretende recuperar y registrar las voces e historia de inmigrantes italianos, francófonos y de otras proveniencias, y sus descendientes, radicados en la Pampa Gringa.</p>
             </div>
             <div class="columna">
-                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/"><img src="img/migrations.svg" alt="" class="grande"></a>
+                <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/"><img src="img/migraciones_escritorio.svg" alt="" class="grande"></a>
                 <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/BECK_BERNARD/"><h1 class="migraciones">Programa de estudio sobre Migraciones</h1></a>
                 <h2 class="migraciones">Lina y Charles Beck Bernard</h2>
                 <p>Espacio pluridisciplinario para el estudio en los perfiles identitarios santafesinos y argentinos.</p>
@@ -298,7 +321,9 @@
         
         <div class="fila">
             <div class="columna">
-                <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/"><img src="img/altrocche_escritorio.svg" alt="" class=""></a>
+                <div class="imagen">
+                    <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/"><img src="img/altrocche_escritorio.svg" alt="" class=""></a>
+                </div>
                 <div class="texto">
                     <a href="https://www.fhuc.unl.edu.ar/portalgringo/museoaltrocche/"><h1 class="altrocche">¡Altrocché!</h1></a>
                     <h2 class="altrocche">Museo Virtual</h2>
@@ -315,7 +340,7 @@
             </div>
             <div class="columna">
                 <div class="imagen">
-                    <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html"><img src="img/piemontesas_escritorio.png" alt=""></a>
+                    <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html"><img src="img/piemontesas_escritorio.svg" alt=""></a>
                 </div>
                 <div class="texto">
                     <a href="https://www.fhuc.unl.edu.ar/portalgringo/crear/gringa/PIEMONTESES/index.html"><h1>Migraciones Piamontesas</h1></a>
@@ -416,10 +441,14 @@
     
     <!--To do: mejorar duplicación para escritorio-->
     <section class="companeros-escritorio">
+
         <div class="intro">
             <h4 class="nuestros">Nuestros</h4>
             <h4 class="companeros-cursiva">socios</h4>
             <p>El portal gringo posee amplias conexiones e instituciones nacionales e internacionales que lo enriquecen  y difunden...</p>
+            <div class="detalle-socios">
+                <img src="img/detalle.svg" alt="Detalle">
+            </div>
         </div>
         <div class="grilla">
             <div class="partner-item">
@@ -534,7 +563,7 @@
     <!--Footer-->
     <section class="redes"> 
         <h4 class="nuestrasredes">Nuestras redes</h4>
-        <h4 class="mantenteinformado">Mantente informado sobre la pampa</h4>
+        <h4 class="mantenteinformado">Mantente informado sobre la Pampa Gringa</h4>
         <div class="imagenes">
             <a href="mailto:baportalgringo@gmail.com"><img src="img/mail_celular.png" alt=""></a>
             <a href="https://www.youtube.com/@portalvirtualdelamemoriagr7678/videos"><img src="img/youtube_celular.png" alt=""></a> <!--To do: poner link a youtube si lo hay-->
@@ -542,16 +571,16 @@
             <a href="https://www.facebook.com/profile.php?id=100057355874253"><img src="img/facebook_celular.png" alt=""></a>
         </div>
         <p>
-            Santa Fe, Argentina
+            &nbsp
         </p>
         <p>
-            Universidad Nacional del Litoral
+            &nbsp
         </p>
         <p>
-            Facultad de Humanidades y Ciencias 
+            &nbsp
         </p>
         <p>
-            Ciudad Universitaria | Paraje el Pozo.
+            &nbsp
         </p>
         
     </section>

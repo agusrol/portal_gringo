@@ -187,3 +187,49 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+lupitaEscritorio = document.getElementsByClassName('lupita-escritorio')[0];
+var mostrarBuscar = 0;
+
+lupitaEscritorio.addEventListener('click', function (event) {
+    event.preventDefault();
+    var input = document.getElementById('lupita-input-cuadro-busqueda');
+    var instagramEscritorio = document.getElementsByClassName('instagram-escritorio')[0];
+
+    if (mostrarBuscar == 0) {
+        lupitaEscritorio.style.transform = 'translateX(-1420%)';
+        instagramEscritorio.style.transform = 'translateX(-1180%)';
+        
+        input.classList.add('mostrar');
+        input.removeAttribute('readonly'); // Permite la edición
+        input.style.cursor = 'text'; // Cambia el cursor a uno de texto
+        mostrarBuscar = 1;
+    } else {
+        lupitaEscritorio.style.transform = 'translateX(0%)';
+        instagramEscritorio.style.transform = 'translateX(0%)';
+        
+        input.classList.remove('mostrar');
+        input.setAttribute('readonly', true); // Deshabilita la edición
+        input.style.cursor = 'default'; // Mantiene el cursor sin cambiar
+        mostrarBuscar = 0;
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona todos los párrafos con la clase 'leer-mas'
+    var leerMasElements = document.querySelectorAll('.leer-mas');
+
+    leerMasElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+            // Encuentra el enlace dentro del párrafo
+            var link = element.querySelector('a');
+            if (link) {
+                // Redirige a la URL del enlace
+                window.location.href = link.href;
+            }
+        });
+
+        // Cambia el cursor al pasar sobre el párrafo para indicar que es clickeable
+        element.style.cursor = 'pointer';
+    });
+});

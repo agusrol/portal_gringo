@@ -65,18 +65,18 @@
   
   @font-face {
     font-family: 'libre-baskerville-italic'; 
-    src: url('C:/xampp/htdocs/portal_gringo/fonts/Libre Baskerville/LibreBaskerville-Italic.ttf') format('truetype');
+    src: url('fonts/Libre-Baskerville/LibreBaskerville-Italic.ttf') format('truetype');
   }
   
   
   @font-face {
     font-family: 'libre-baskerville-bold'; 
-    src: url('fonts/Libre Baskerville/LibreBaskerville-Bold.ttf') format('truetype');
+    src: url('fonts/Libre-Baskerville/LibreBaskerville-Bold.ttf') format('truetype');
   }
   
   @font-face {
     font-family: 'libre-baskerville-regular'; 
-    src: url('C:/xampp/htdocs/portal_gringo/fonts/Libre Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+    src: url('fonts/Libre-Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
   }
 
   @font-face{
@@ -207,8 +207,9 @@
   }
   .lupita-escritorio {
     display: none;
-    
+    transition: transform 5.5s ease;
   }
+
   .lupa > img {
     height: 1.3em; 
     width: 1.25em;
@@ -566,7 +567,9 @@
     margin: 0em;
     /* background-color: black; Por alguna razón no se carga el color negro pero sí otros...averiguar eso sólo para sacarme la duda ¿qué duda? :)*/
   }
-  
+  #lupita-input-cuadro-busqueda{
+    display: none;
+  }
   .secciones > div.altrocche > img { /*To do: uniformar  CSS con francofonas y piamontesas*/
     width: 45%;
     position: relative;
@@ -652,6 +655,8 @@
   .companeros-escritorio {
     display: none;
   }
+
+  
   .companeros > h4.nuestros{
     font-family: 'jubilat-med'; /*To do: poner tipografía correspondiente*/
     color: #823d24;
