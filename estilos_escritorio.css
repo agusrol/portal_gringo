@@ -42,9 +42,9 @@
     margin-left: 1.5em;
     display: inline-block;
     top: 33%;
-    font-family: 'jubilat-regular';
+    font-family: 'jubilat-med';
     font-size: 1.1em;
-    font-weight: 700;
+    /* font-weight: 700; */
   }
 
   nav > ul > li:hover{
@@ -340,13 +340,13 @@
 }
 
 .escritorio .detalle2 {
-    top: 21em;
+    top: 13em;
     left: 7em;
     z-index:4;
 }
 
 .escritorio .detalle3 {
-    top: 22em;
+    top: 14em;
     left: 7em;
 }
 
@@ -478,14 +478,14 @@ body > div.escritorio > section > div:nth-child(2) > div:nth-child(1) > p:nth-ch
 
 body > div.escritorio > section > div:nth-child(1) > div:nth-child(1) > p { /*Selector de leer más del lado izquierdo del "Inicio"*/
   position: absolute;
-  margin-left: 74%;
-  margin-top: 27%;
+  margin-left: 70%;
+  margin-top: 9%;
 
 }
 body > div.escritorio > section > div:nth-child(2) > div:nth-child(2) > p {/*Selector de leer más del lado derecho del "Inicio"*/
   position: relative;
   margin-top: 8em;
-  margin-left:0.5em;
+  margin-left:0.97em;
 }
 
 
@@ -613,7 +613,7 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3){ /*Sel
 
 body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) { /*Selector de imagen de migraciones y todos los textos que la acompañan*/
 
-  text-align: justify;
+  /* text-align: justify; */
   font-size: 1.2em;
 }
 body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) > a:nth-child(2) > h1 { /*Selector de título de migraciones*/
@@ -635,12 +635,14 @@ body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(2) > p { 
   padding-left: 1.5em;
   padding-right: 1.5em;
   margin:0;
+  justify-content: left;
 }
 
 body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) { /*Selector de imagen de LMO y todos los textos que la acompañan*/
 
-  text-align: justify;
-  font-size: 1.2em;
+  /* text-align: justify;  */
+  font-size: 1.2em; 
+  
 }
 body > section.secciones-escritorio > div:nth-child(3) > div:nth-child(1) > a:nth-child(2) > h1 { /*Selector de título de LMO*/
   font-family:'libre-baskerville-regular';
@@ -681,7 +683,7 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1) > div 
   padding-right: 1.5em;
   margin-bottom: 0.2em;
   margin-top: 0.2em;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(1) > div > p {/*Selector de párrafo en baskerville (el de más abajo) de Altrocche*/
@@ -708,7 +710,7 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(2) > div 
   padding-right: 1.5em;
   margin-bottom: 0.2em;
   margin-top: 0.2em;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 
@@ -734,7 +736,7 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div 
   padding-right: 1.5em;
   margin-bottom: 0.2em;
   margin-top: 0.2em;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div > p {/*Selector de párrafo en baskerville (el de más abajo) de Piamontesas*/
@@ -762,8 +764,8 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div 
 }
 .detalle-socios >img{
   position:absolute;
-  z-index: 99999;
-  top:60%;
+  z-index: 1;
+  top:74%;
   left:10%;
   mix-blend-mode: darken;
 }
@@ -773,7 +775,7 @@ body > section.secciones-escritorio > div:nth-child(5) > div:nth-child(3) > div 
 }
 
 body > section.companeros-escritorio > div.intro > p{
-  font-family: 'libre-baskerville';
+  font-family: 'libre-baskerville-regular';
   font-weight: 500;
 }
 .grilla {

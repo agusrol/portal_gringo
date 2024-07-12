@@ -29,7 +29,7 @@ function autoSlide() {
     moveSlide(1);
 }
 /* la función setInterval se usa para invocar una función cada una cantidad determinada de milisegundos. El primer argumento es la función, el segundo los ms.*/
-const slideInterval = setInterval(autoSlide, 3000);
+const slideInterval = setInterval(autoSlide, 6000);
 
 /*El siguiente es un listener que se ejecuta una vez que se carga todo el DOM, es decir los tags de html (no necesariamente las imágenes, pero el tag de la imagen sí,
 entre otros). A grandes rasgos, abre y cierra los submenúes. Veamos:
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         moveSlideEscritorio(1);
     }
 
-    setInterval(autoSlideEscritorio, 3000);
+    setInterval(autoSlideEscritorio, 6000);
 });
 
 

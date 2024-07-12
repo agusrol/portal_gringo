@@ -323,12 +323,14 @@
   
   .carousel-item {
     min-width: 100%;
+    min-height: 100%;
     box-sizing: border-box;
     position: relative;
   }
   
   .carousel-item img {
     width: 100%;
+    height: 100%;
     display: block;
   }
   /*Desaparezco desktop*/
@@ -529,15 +531,46 @@
     margin-left: 30%; /*To do: calcular bien o usar una propiedad mejor que lo haga sola*/
     /*margin-top: 5em;*/ /*Culpa del efecto de colapso de márgenes no sirve esto, peeero agregando <br> no colapsan! Tal vez puedo reemplazarlo por un div si no quiero usar un inline como <br>.*/
     margin-top: 0em;
+    margin-bottom: 1em;
   }
   
   .footer {
     display: none;
+    position: relative;
+  }
+
+  body > div.redes > div > div { /*To do: poner imagen en footer*/
+    position: relative;
+    /* top: 100vh; */
+    /* bottom: 10%; */
+    top:-8em;
+    margin:0;
+    padding:0;
+    border:none;
+    display:none;
+
+    /* opacity: 0.1; */
+    mix-blend-mode:difference;
+
+  }
+
+  body > section.secciones > div:nth-child(3){ /*Selector div de LMO*/
+    position: relative;
+    padding-left:1em;
+    /* margin-left:1em; */
+  }
+
+  
+  body > section.secciones > div:nth-child(7){
+    position: relative;
+    padding-left:1em;
+    /* margin-left:1em; */
   }
   .secciones > img.grande {
     margin-top: 4%;
     height: 100%;
-    width: 100%;
+    width: 100%; 
+
   }
   
   .secciones > h1.lmo {
@@ -696,8 +729,15 @@
     text-align: center; /* Centrado del texto */
   }
   
-  
-  .partner-item > h2{
+  .partner-item > a{
+    padding: 0px; /* Espaciado interno */
+    border: 0px solid #ccc; /* Borde para visualización */
+    text-align: center; /* Centrado del texto */
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+  }
+  .partner-item > a>h2{
     padding: 0px; /* Espaciado interno */
     border: 0px solid #ccc; /* Borde para visualización */
     text-align: center; /* Centrado del texto */
